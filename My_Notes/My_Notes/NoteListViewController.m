@@ -10,6 +10,7 @@
 
 @interface NoteListViewController ()
 
+@property (strong,nonatomic) NSMutableArray *allList;
 @end
 
 @implementation NoteListViewController
@@ -20,9 +21,13 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    
+    [ self loadDate];
 }
 
+- (void)loadDate{
+    NoteDao *noteDao = [NoteDao sharedInstance];
+    self.allList =[noteDao findAll];
+}
 /*
  #pragma mark - Navigation
  
