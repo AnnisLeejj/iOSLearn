@@ -5,9 +5,22 @@
 //  Created by 俊杰李 on 2020/5/12.
 //  Copyright © 2020 俊杰李. All rights reserved.
 //
+ 
+#import <Foundation/Foundation.h>
 
-#ifndef NoteDao_h
-#define NoteDao_h
+#import "Note.h"
 
+@interface NoteDao : NSObject
 
-#endif /* NoteDao_h */
++(NoteDao*)sharedInstance;
+
+-(int) insert:(Note*) note;
+
+-(int) remove:(Note*) note;
+
+-(int) modify:(Note*) note;
+
+-(NSMutableArray*) findAll;
+
+-(Note*) findById:(Note*) note;
+@end

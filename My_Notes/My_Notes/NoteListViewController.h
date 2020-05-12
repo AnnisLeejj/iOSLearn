@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+#import "DetailViewController.h"
+#import "Note.h"
+#import "NoteDao.h"
 
-@interface NoteListViewController : UIViewController
+@class DetailViewController;
+@interface NoteListViewController : UITableViewController
 
+@property (strong,nonatomic) DetailViewController *detailViewController;
 @end
-
-NS_ASSUME_NONNULL_END
