@@ -6,8 +6,21 @@
 //  Copyright © 2020 俊杰李. All rights reserved.
 //
 
-#ifndef NoteDao_h
-#define NoteDao_h
+#import <Foundation/Foundation.h>
 
+#import "Note.h"
 
-#endif /* NoteDao_h */
+@interface NoteDao : NSObject
+
++(NoteDao*)sharedInstance;
+
+-(int) insert:(Note*) note;
+
+-(int) remove:(Note*) note;
+
+-(int) modify:(Note*) note;
+
+-(NSMutableArray*) findAll;
+
+-(Note*) findById:(Note*) note;
+@end

@@ -15,6 +15,10 @@
 		9B918A63246B950A00705D65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B918A62246B950A00705D65 /* Assets.xcassets */; };
 		9B918A66246B950A00705D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B918A64246B950A00705D65 /* LaunchScreen.storyboard */; };
 		9B918A69246B950A00705D65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A68246B950A00705D65 /* main.m */; };
+		9B918A71246B95BB00705D65 /* NotesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B918A70246B95BB00705D65 /* NotesList.plist */; };
+		9B918A77246B963C00705D65 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A76246B963C00705D65 /* Note.m */; };
+		9B918A79246B96A400705D65 /* NoteDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A78246B96A400705D65 /* NoteDao.m */; };
+		9B918A7C246BA2C800705D65 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A7B246BA2C800705D65 /* AddViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,13 @@
 		9B918A65246B950A00705D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B918A67246B950A00705D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B918A68246B950A00705D65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B918A70246B95BB00705D65 /* NotesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = NotesList.plist; path = ../../My_Notes/Model/NotesList.plist; sourceTree = "<group>"; };
+		9B918A74246B95E100705D65 /* NoteDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteDao.h; sourceTree = "<group>"; };
+		9B918A75246B95EF00705D65 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		9B918A76246B963C00705D65 /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		9B918A78246B96A400705D65 /* NoteDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteDao.m; sourceTree = "<group>"; };
+		9B918A7A246BA2C800705D65 /* AddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		9B918A7B246BA2C800705D65 /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +59,7 @@
 		9B918A47246B950700705D65 = {
 			isa = PBXGroup;
 			children = (
+				9B918A6F246B95A400705D65 /* model */,
 				9B918A52246B950700705D65 /* MyNote2 */,
 				9B918A51246B950700705D65 /* Products */,
 			);
@@ -77,8 +89,38 @@
 				9B918A64246B950A00705D65 /* LaunchScreen.storyboard */,
 				9B918A67246B950A00705D65 /* Info.plist */,
 				9B918A68246B950A00705D65 /* main.m */,
+				9B918A7A246BA2C800705D65 /* AddViewController.h */,
+				9B918A7B246BA2C800705D65 /* AddViewController.m */,
 			);
 			path = MyNote2;
+			sourceTree = "<group>";
+		};
+		9B918A6F246B95A400705D65 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9B918A73246B95CA00705D65 /* dao */,
+				9B918A72246B95C500705D65 /* domain */,
+				9B918A70246B95BB00705D65 /* NotesList.plist */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9B918A72246B95C500705D65 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				9B918A75246B95EF00705D65 /* Note.h */,
+				9B918A76246B963C00705D65 /* Note.m */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		9B918A73246B95CA00705D65 /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				9B918A74246B95E100705D65 /* NoteDao.h */,
+				9B918A78246B96A400705D65 /* NoteDao.m */,
+			);
+			path = dao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +182,7 @@
 			files = (
 				9B918A66246B950A00705D65 /* LaunchScreen.storyboard in Resources */,
 				9B918A63246B950A00705D65 /* Assets.xcassets in Resources */,
+				9B918A71246B95BB00705D65 /* NotesList.plist in Resources */,
 				9B918A61246B950700705D65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,7 +197,10 @@
 				9B918A69246B950A00705D65 /* main.m in Sources */,
 				9B918A55246B950700705D65 /* AppDelegate.m in Sources */,
 				9B918A5B246B950700705D65 /* MasterViewController.m in Sources */,
+				9B918A77246B963C00705D65 /* Note.m in Sources */,
 				9B918A58246B950700705D65 /* SceneDelegate.m in Sources */,
+				9B918A79246B96A400705D65 /* NoteDao.m in Sources */,
+				9B918A7C246BA2C800705D65 /* AddViewController.m in Sources */,
 				9B918A5E246B950700705D65 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

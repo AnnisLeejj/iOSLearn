@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1FEDB6246C1B32002E070D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FEDB5246C1B32002E070D /* Note.swift */; };
+		9B1FEDBB246C1D3B002E070D /* NoteDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FEDBA246C1D3B002E070D /* NoteDao.swift */; };
 		9B918A8A246BCE4900705D65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A89246BCE4900705D65 /* AppDelegate.swift */; };
 		9B918A8C246BCE4900705D65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A8B246BCE4900705D65 /* SceneDelegate.swift */; };
 		9B918A8E246BCE4900705D65 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A8D246BCE4900705D65 /* MasterViewController.swift */; };
@@ -14,9 +16,13 @@
 		9B918A93246BCE4900705D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B918A91246BCE4900705D65 /* Main.storyboard */; };
 		9B918A95246BCE4C00705D65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B918A94246BCE4C00705D65 /* Assets.xcassets */; };
 		9B918A98246BCE4C00705D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B918A96246BCE4C00705D65 /* LaunchScreen.storyboard */; };
+		9B918AA1246BCF0A00705D65 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B918AA0246BCF0A00705D65 /* libsqlite3.0.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B1FEDB5246C1B32002E070D /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		9B1FEDB7246C1D16002E070D /* MyNote_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyNote_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		9B1FEDBA246C1D3B002E070D /* NoteDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDao.swift; sourceTree = "<group>"; };
 		9B918A86246BCE4800705D65 /* MyNote_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNote_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B918A89246BCE4900705D65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B918A8B246BCE4900705D65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +32,7 @@
 		9B918A94246BCE4C00705D65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B918A97246BCE4C00705D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B918A99246BCE4C00705D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B918AA0246BCF0A00705D65 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +40,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B918AA1246BCF0A00705D65 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B1FEDB1246C1B09002E070D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9B1FEDB3246C1B18002E070D /* dao */,
+				9B1FEDB2246C1B11002E070D /* domain */,
+				9B1FEDB7246C1D16002E070D /* MyNote_Swift-Bridging-Header.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9B1FEDB2246C1B11002E070D /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				9B1FEDB5246C1B32002E070D /* Note.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		9B1FEDB3246C1B18002E070D /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				9B1FEDBA246C1D3B002E070D /* NoteDao.swift */,
+			);
+			path = dao;
+			sourceTree = "<group>";
+		};
 		9B918A7D246BCE4800705D65 = {
 			isa = PBXGroup;
 			children = (
+				9B1FEDB1246C1B09002E070D /* model */,
 				9B918A88246BCE4900705D65 /* MyNote_Swift */,
 				9B918A87246BCE4800705D65 /* Products */,
+				9B918A9F246BCF0A00705D65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +104,14 @@
 				9B918A99246BCE4C00705D65 /* Info.plist */,
 			);
 			path = MyNote_Swift;
+			sourceTree = "<group>";
+		};
+		9B918A9F246BCF0A00705D65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B918AA0246BCF0A00705D65 /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +146,7 @@
 				TargetAttributes = {
 					9B918A85246BCE4800705D65 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -141,7 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1FEDB6246C1B32002E070D /* Note.swift in Sources */,
 				9B918A8A246BCE4900705D65 /* AppDelegate.swift in Sources */,
+				9B1FEDBB246C1D3B002E070D /* NoteDao.swift in Sources */,
 				9B918A8C246BCE4900705D65 /* SceneDelegate.swift in Sources */,
 				9B918A8E246BCE4900705D65 /* MasterViewController.swift in Sources */,
 				9B918A90246BCE4900705D65 /* DetailViewController.swift in Sources */,
@@ -288,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 775MQGAGK4;
 				INFOPLIST_FILE = MyNote_Swift/Info.plist;
@@ -297,6 +345,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.annis.MyNote-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "model/MyNote_Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -306,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 775MQGAGK4;
 				INFOPLIST_FILE = MyNote_Swift/Info.plist;
@@ -315,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.annis.MyNote-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "model/MyNote_Swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

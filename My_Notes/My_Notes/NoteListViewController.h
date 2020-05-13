@@ -13,6 +13,7 @@
 #import "NoteDao.h"
 
 @class DetailViewController;
+
 @interface NoteListViewController : UITableViewController
 
 @property (strong,nonatomic) DetailViewController *detailViewController;

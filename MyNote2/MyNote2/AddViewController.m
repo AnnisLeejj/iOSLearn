@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 
 @interface AddViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -17,6 +18,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:TRUE completion:nil];
+}
+- (IBAction)save:(id)sender {
+    NSString *content = self.textView.text;
+    
+    Note *note = [[Note alloc] initWithDate:[[NSDate alloc] init] content:content];
+    NoteDao* noteDao = [NoteDao sharedInstance];
+    [noteDao insert:note];
+    NSMutableArray *array = [noteDao findAll];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reload" object:array];
+//    [self.textView resignFirstResponder];
+    [self dismissViewControllerAnimated:TRUE completion:nil];
 }
 
 /*

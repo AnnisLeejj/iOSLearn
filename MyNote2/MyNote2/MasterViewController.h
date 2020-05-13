@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DetailViewController.h"
+#import "Note.h"
+#import "NoteDao.h"
+
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController
 
-@property (strong, nonatomic) DetailViewController *detailViewController;
-
-
+@property (strong,nonatomic) DetailViewController *detailViewController;
 @end
 

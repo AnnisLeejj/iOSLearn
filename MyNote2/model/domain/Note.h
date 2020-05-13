@@ -6,8 +6,15 @@
 //  Copyright © 2020 俊杰李. All rights reserved.
 //
 
-#ifndef Note_h
-#define Note_h
+#import <Foundation/Foundation.h> 
 
+@interface Note : NSObject
 
-#endif /* Note_h */
+@property(nonatomic, strong) NSDate* date;
+@property(nonatomic, strong) NSString* content;
+
+-(instancetype)initWithDate:(NSDate*)date content:(NSString*)content;
+
+-(instancetype)init;
+
+@end

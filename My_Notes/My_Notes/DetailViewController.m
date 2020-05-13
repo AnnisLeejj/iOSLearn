@@ -18,7 +18,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
+- (void)setDetailItem:(id)newDetailItem {
+//    if (_detailItem != newDetailItem) {
+//        _detailItem = newDetailItem;
+//
+//        // Update the view.
+//        [self configureView];
+//    }
+}
 /*
 #pragma mark - Navigation
 
