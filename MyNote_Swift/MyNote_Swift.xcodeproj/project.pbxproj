@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9B1FEDB6246C1B32002E070D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FEDB5246C1B32002E070D /* Note.swift */; };
 		9B1FEDBB246C1D3B002E070D /* NoteDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FEDBA246C1D3B002E070D /* NoteDao.swift */; };
+		9B8C5501246CF29100A28857 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C5500246CF29100A28857 /* AddViewController.swift */; };
 		9B918A8A246BCE4900705D65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A89246BCE4900705D65 /* AppDelegate.swift */; };
 		9B918A8C246BCE4900705D65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A8B246BCE4900705D65 /* SceneDelegate.swift */; };
 		9B918A8E246BCE4900705D65 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B918A8D246BCE4900705D65 /* MasterViewController.swift */; };
@@ -23,6 +24,7 @@
 		9B1FEDB5246C1B32002E070D /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		9B1FEDB7246C1D16002E070D /* MyNote_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyNote_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B1FEDBA246C1D3B002E070D /* NoteDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDao.swift; sourceTree = "<group>"; };
+		9B8C5500246CF29100A28857 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		9B918A86246BCE4800705D65 /* MyNote_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNote_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B918A89246BCE4900705D65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B918A8B246BCE4900705D65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				9B918A89246BCE4900705D65 /* AppDelegate.swift */,
+				9B8C5500246CF29100A28857 /* AddViewController.swift */,
 				9B918A8B246BCE4900705D65 /* SceneDelegate.swift */,
 				9B918A8D246BCE4900705D65 /* MasterViewController.swift */,
 				9B918A8F246BCE4900705D65 /* DetailViewController.swift */,
@@ -188,6 +191,7 @@
 			files = (
 				9B1FEDB6246C1B32002E070D /* Note.swift in Sources */,
 				9B918A8A246BCE4900705D65 /* AppDelegate.swift in Sources */,
+				9B8C5501246CF29100A28857 /* AddViewController.swift in Sources */,
 				9B1FEDBB246C1D3B002E070D /* NoteDao.swift in Sources */,
 				9B918A8C246BCE4900705D65 /* SceneDelegate.swift in Sources */,
 				9B918A8E246BCE4900705D65 /* MasterViewController.swift in Sources */,
