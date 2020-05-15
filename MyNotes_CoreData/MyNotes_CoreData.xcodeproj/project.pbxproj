@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B461F79246E3187009713B6 /* NoteManagedObject+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B461F77246E3187009713B6 /* NoteManagedObject+CoreDataClass.m */; };
+		9B461F7A246E3187009713B6 /* NoteManagedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B461F78246E3187009713B6 /* NoteManagedObject+CoreDataProperties.m */; };
+		9B461F7D246E3869009713B6 /* CoreDataBaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B461F7C246E3869009713B6 /* CoreDataBaseDao.m */; };
+		9B461F81246E3E48009713B6 /* NoteDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B461F80246E3E48009713B6 /* NoteDao.m */; };
+		9B461F84246E7EF6009713B6 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B461F83246E7EF6009713B6 /* AddViewController.m */; };
 		9B8C5510246D486400A28857 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C550F246D486400A28857 /* AppDelegate.m */; };
 		9B8C5513246D486400A28857 /* MyNotes_CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C5511246D486400A28857 /* MyNotes_CoreData.xcdatamodeld */; };
 		9B8C5516246D486500A28857 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C5515246D486500A28857 /* SceneDelegate.m */; };
@@ -20,6 +25,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B461F75246E3187009713B6 /* NoteManagedObject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoteManagedObject+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9B461F76246E3187009713B6 /* NoteManagedObject+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoteManagedObject+CoreDataClass.h"; sourceTree = "<group>"; };
+		9B461F77246E3187009713B6 /* NoteManagedObject+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NoteManagedObject+CoreDataClass.m"; sourceTree = "<group>"; };
+		9B461F78246E3187009713B6 /* NoteManagedObject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NoteManagedObject+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9B461F7C246E3869009713B6 /* CoreDataBaseDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataBaseDao.m; sourceTree = "<group>"; };
+		9B461F7E246E387F009713B6 /* CoreDataBaseDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataBaseDao.h; sourceTree = "<group>"; };
+		9B461F7F246E3D29009713B6 /* NoteDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteDao.h; sourceTree = "<group>"; };
+		9B461F80246E3E48009713B6 /* NoteDao.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteDao.m; sourceTree = "<group>"; };
+		9B461F82246E7EF6009713B6 /* AddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		9B461F83246E7EF6009713B6 /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		9B8C550B246D486400A28857 /* MyNotes_CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNotes_CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8C550E246D486400A28857 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9B8C550F246D486400A28857 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,6 +65,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B461F7B246E3849009713B6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9B461F77246E3187009713B6 /* NoteManagedObject+CoreDataClass.m */,
+				9B461F76246E3187009713B6 /* NoteManagedObject+CoreDataClass.h */,
+				9B461F75246E3187009713B6 /* NoteManagedObject+CoreDataProperties.h */,
+				9B461F78246E3187009713B6 /* NoteManagedObject+CoreDataProperties.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		9B8C5502246D486400A28857 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +109,8 @@
 				9B8C5522246D486C00A28857 /* LaunchScreen.storyboard */,
 				9B8C5525246D486C00A28857 /* Info.plist */,
 				9B8C5526246D486C00A28857 /* main.m */,
+				9B461F82246E7EF6009713B6 /* AddViewController.h */,
+				9B461F83246E7EF6009713B6 /* AddViewController.m */,
 			);
 			path = MyNotes_CoreData;
 			sourceTree = "<group>";
@@ -100,6 +128,10 @@
 		9B8C552E246D492000A28857 /* dao */ = {
 			isa = PBXGroup;
 			children = (
+				9B461F7E246E387F009713B6 /* CoreDataBaseDao.h */,
+				9B461F7C246E3869009713B6 /* CoreDataBaseDao.m */,
+				9B461F7F246E3D29009713B6 /* NoteDao.h */,
+				9B461F80246E3E48009713B6 /* NoteDao.m */,
 			);
 			path = dao;
 			sourceTree = "<group>";
@@ -107,6 +139,7 @@
 		9B8C552F246D492600A28857 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				9B461F7B246E3849009713B6 /* Core */,
 				9B8C5530246D493D00A28857 /* Note.h */,
 				9B8C5531246D4B9000A28857 /* Note.m */,
 			);
@@ -184,11 +217,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B8C551C246D486500A28857 /* DetailViewController.m in Sources */,
+				9B461F81246E3E48009713B6 /* NoteDao.m in Sources */,
+				9B461F84246E7EF6009713B6 /* AddViewController.m in Sources */,
 				9B8C5519246D486500A28857 /* MasterViewController.m in Sources */,
+				9B461F7D246E3869009713B6 /* CoreDataBaseDao.m in Sources */,
 				9B8C5513246D486400A28857 /* MyNotes_CoreData.xcdatamodeld in Sources */,
+				9B461F7A246E3187009713B6 /* NoteManagedObject+CoreDataProperties.m in Sources */,
 				9B8C5516246D486500A28857 /* SceneDelegate.m in Sources */,
 				9B8C5527246D486C00A28857 /* main.m in Sources */,
 				9B8C5532246D4B9000A28857 /* Note.m in Sources */,
+				9B461F79246E3187009713B6 /* NoteManagedObject+CoreDataClass.m in Sources */,
 				9B8C5510246D486400A28857 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

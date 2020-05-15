@@ -4,12 +4,12 @@
         <attribute name="timestamp" optional="YES" attributeType="Date"/>
         <userInfo/>
     </entity>
-    <entity name="Note" representedClassName="Note" syncable="YES">
+    <entity name="Note" representedClassName="NoteManagedObject" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
         <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
-        <element name="Note" positionX="261" positionY="198" width="128" height="73"/>
+        <element name="Note" positionX="469.3671875" positionY="79.203125" width="128" height="73"/>
     </elements>
 </model>

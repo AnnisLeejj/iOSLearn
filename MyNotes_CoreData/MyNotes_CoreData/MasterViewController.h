@@ -10,15 +10,20 @@
 #import <CoreData/CoreData.h>
 #import "MyNotes_CoreData+CoreDataModel.h"
 
+#import "NoteDao.h"
+
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
-@property (strong, nonatomic) NSFetchedResultsController<Event *> *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+//@property (strong, nonatomic) NSFetchedResultsController<Event *> *fetchedResultsController;
+//@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+
+@property (strong, nonatomic) NoteDao *noteDao;
+@property (strong, nonatomic) NSMutableArray *notes;
 
 @end
 

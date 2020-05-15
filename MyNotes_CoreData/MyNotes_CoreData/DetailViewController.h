@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyNotes_CoreData+CoreDataModel.h"
+#import "Note.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) Event *detailItem;
+@property (strong, nonatomic) Note *note;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end
