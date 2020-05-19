@@ -26,6 +26,19 @@ NSString* myAccount= @"l536510961@126.com";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:@"reload" object:nil];
     
+     //初始化UIRefreshControl
+        UIRefreshControl *rc = [[UIRefreshControl alloc] init];
+    [rc setAttributedTitle:[[NSAttributedString alloc] initWithString:@"下拉刷新"]];
+    [rc addTarget:self action:@selector(loadAllNotes) forControlEvents:UIControlEventValueChanged];
+//    rc.addTarget(self, action: #selector(loadNotes), for: UIControl.Event.valueChanged)
+    [self setRefreshControl: rc];
+    
+  
+//      rc.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
+//      [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+//      self.refreshControl = rc;
+    
+    
     [self loadAllNotes];
 }
 
@@ -111,6 +124,12 @@ NSString* myAccount= @"l536510961@126.com";
 }
 
 -(void) loadAllNotes{
+    
+    if(self.refreshControl.isRefreshing){
+        [self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"正在加载"]];
+//          self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"加载中..."];
+    }
+ 
     [[HttpUtil alloc] loadAll:myAccount completionHandler:^(NSDictionary *resDict, NSError *error) {
         if(error){
             [self showMessage: error.description];
@@ -124,6 +143,10 @@ NSString* myAccount= @"l536510961@126.com";
             NSString *errorStr = [resultCode errorMessage];
             [self showMessage: errorStr];
         }
+          [self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"下拉刷新"]];
+        self.refreshControl.endRefreshing;
+//        [self.refreshControl endRefreshing];
+//          self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
     }];
 }
 -(void) showMessage:(NSString*) message{
