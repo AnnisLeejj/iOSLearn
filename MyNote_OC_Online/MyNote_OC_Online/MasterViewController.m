@@ -32,13 +32,7 @@ NSString* myAccount= @"l536510961@126.com";
     [rc addTarget:self action:@selector(loadAllNotes) forControlEvents:UIControlEventValueChanged];
 //    rc.addTarget(self, action: #selector(loadNotes), for: UIControl.Event.valueChanged)
     [self setRefreshControl: rc];
-    
-  
-//      rc.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
-//      [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
-//      self.refreshControl = rc;
-    
-    
+     
     [self loadAllNotes];
 }
 
@@ -46,8 +40,7 @@ NSString* myAccount= @"l536510961@126.com";
     self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     [super viewWillAppear:animated];
 }
-
-
+ 
 - (void)insertNewObject:(id)sender {
     if (!self.notes) {
         self.notes = [[NSMutableArray alloc] init];
@@ -56,8 +49,6 @@ NSString* myAccount= @"l536510961@126.com";
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-
-
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -72,18 +63,15 @@ NSString* myAccount= @"l536510961@126.com";
     }
 }
 
-
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.notes.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
@@ -108,7 +96,6 @@ NSString* myAccount= @"l536510961@126.com";
                 [self showMessage:error.description];
             }else{
 //                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//
                 [self loadAllNotes];
 //                [self.notes removeObjectAtIndex:indexPath.row];
             }
@@ -118,7 +105,6 @@ NSString* myAccount= @"l536510961@126.com";
     }
 }
 
-
 -(void)reload:(NSNotification*) notification{
     [self loadAllNotes];
 }
@@ -126,11 +112,25 @@ NSString* myAccount= @"l536510961@126.com";
 -(void) loadAllNotes{
     
     if(self.refreshControl.isRefreshing){
-        [self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"正在加载"]];
-//          self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"加载中..."];
+        [self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"正在加载..."]];
     }
- 
+    /// UIActivityIndicatorView.
+    MBProgressHUDModeIndeterminate,
+    /// A round, pie-chart like, progress view.
+    MBProgressHUDModeDeterminate,
+    /// Horizontal progress bar.
+    MBProgressHUDModeDeterminateHorizontalBar,
+    /// Ring-shaped progress view.
+    MBProgressHUDModeAnnularDeterminate,
+    /// Shows a custom view.
+    MBProgressHUDModeCustomView,
+    /// Shows only labels.
+    MBProgressHUDModeText;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeDeterminateHorizontalBar;
+    hud.label.text = @"正在加载";
     [[HttpUtil alloc] loadAll:myAccount completionHandler:^(NSDictionary *resDict, NSError *error) {
+        [hud hideAnimated:YES];
         if(error){
             [self showMessage: error.description];
             return;
@@ -143,10 +143,9 @@ NSString* myAccount= @"l536510961@126.com";
             NSString *errorStr = [resultCode errorMessage];
             [self showMessage: errorStr];
         }
-          [self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"下拉刷新"]];
-        self.refreshControl.endRefreshing;
-//        [self.refreshControl endRefreshing];
-//          self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
+        
+        [self.refreshControl endRefreshing];
+        [self.refreshControl setAttributedTitle:[[NSAttributedString alloc] initWithString:@"下拉刷新"]];
     }];
 }
 -(void) showMessage:(NSString*) message{

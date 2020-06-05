@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "NSNumber+Message.h"
 
+#import <AFNetworking/AFNetworking.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 @interface HttpUtil : NSObject
 
 //添加数据

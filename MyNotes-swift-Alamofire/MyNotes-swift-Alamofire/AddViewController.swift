@@ -11,6 +11,7 @@ import Alamofire
 class AddViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +49,7 @@ class AddViewController: UIViewController {
                 }
         }
     }
+    
     func showSuccess(){
         let controller = UIAlertController(title: "添加信息", message: "添加成功", preferredStyle: UIAlertController.Style.alert)
         controller.addAction(   UIAlertAction(title: "OK", style: UIAlertAction.Style.default){action in

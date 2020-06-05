@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		312BFE63247420CE00728150 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312BFE56247420C400728150 /* Alamofire.framework */; };
 		312BFE64247420CE00728150 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 312BFE56247420C400728150 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B7F41EF247D1398008421BF /* MyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7F41EE247D1398008421BF /* MyTest.swift */; };
 		9BEAFDC024739646006244F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEAFDBF24739646006244F3 /* AppDelegate.swift */; };
 		9BEAFDC224739646006244F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEAFDC124739646006244F3 /* SceneDelegate.swift */; };
 		9BEAFDC424739646006244F3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEAFDC324739646006244F3 /* MasterViewController.swift */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		312BFE4A247420C400728150 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		9B7F41EE247D1398008421BF /* MyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTest.swift; sourceTree = "<group>"; };
 		9BEAFDBC24739646006244F3 /* MyNotes-swift-Alamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyNotes-swift-Alamofire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEAFDBF24739646006244F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BEAFDC124739646006244F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		9BEAFDB324739646006244F3 = {
 			isa = PBXGroup;
 			children = (
+				9B7F41EE247D1398008421BF /* MyTest.swift */,
 				312BFE4A247420C400728150 /* Alamofire.xcodeproj */,
 				9BEAFDBE24739646006244F3 /* MyNotes-swift-Alamofire */,
 				9BEAFDBD24739646006244F3 /* Products */,
@@ -339,6 +342,7 @@
 				9BEAFE632473DBA3006244F3 /* NSNumber+Message.swift in Sources */,
 				9BEAFE102473B165006244F3 /* AddViewController.swift in Sources */,
 				9BEAFDC224739646006244F3 /* SceneDelegate.swift in Sources */,
+				9B7F41EF247D1398008421BF /* MyTest.swift in Sources */,
 				9BEAFDC424739646006244F3 /* MasterViewController.swift in Sources */,
 				9BEAFDC624739646006244F3 /* DetailViewController.swift in Sources */,
 			);

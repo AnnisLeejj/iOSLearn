@@ -43,24 +43,54 @@
  */
 -(void) simpleHttp: (NSData*)postData completionHandler:(void (^)(NSDictionary *, NSError *))completionHandler{
     NSString *strURL = @"http://www.51work6.com/service/mynotes/WebService.php";
-    NSURL *url = [NSURL URLWithString:strURL];
-    
-    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+    //AFNetworking 请求
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+
+    NSURL *URL = [NSURL URLWithString:strURL];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:URL ];
+   NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:URL];
     [request setHTTPMethod:@"post"];
     [request setHTTPBody:postData];
-    
-    NSURLSessionConfiguration * config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    
-    NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
-        NSLog(@"请求完成...");
-        if(error){
-            completionHandler(nil,error);
-        }else{
-            NSDictionary *resDict =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            completionHandler(resDict,error);
+
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"uploadProgress: %lld / %lld", uploadProgress.completedUnitCount,uploadProgress.totalUnitCount);
+    } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"downloadProgress: %lld / %lld", downloadProgress.completedUnitCount,downloadProgress.totalUnitCount);
+    } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+             completionHandler(nil,error);
+        } else {
+//            NSLog(@"%@ %@", response, responseObject);
+//            NSDictionary *resDict =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+             completionHandler(responseObject,error);
         }
     }];
-    [task resume];
+
+    [dataTask resume];
+     
+    
+    
+    //iOS 原生框架
+//        NSURL *url = [NSURL URLWithString:strURL];
+//
+//        NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+//        [request setHTTPMethod:@"post"];
+//        [request setHTTPBody:postData];
+//
+//        NSURLSessionConfiguration * config = [NSURLSessionConfiguration defaultSessionConfiguration];
+//        NSURLSession *session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+//
+//        NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+//            NSLog(@"请求完成...");
+//            if(error){
+//                completionHandler(nil,error);
+//            }else{
+//                NSDictionary *resDict =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+//                completionHandler(resDict,error);
+//            }
+//        }];
+//        [task resume];
 }
 @end

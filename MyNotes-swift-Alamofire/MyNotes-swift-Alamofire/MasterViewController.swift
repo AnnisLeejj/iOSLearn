@@ -13,7 +13,6 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var notes:NSArray = NSArray()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -134,4 +133,3 @@ class MasterViewController: UITableViewController {
         }
     }
 }
-

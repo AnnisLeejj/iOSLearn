@@ -31,9 +31,12 @@
     NSString* dateStr =  [dateFormatter stringFromDate:date];
     NSString* content = _textView.text;
     
-    
-    
+     
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = @"正在添加!";
     [[HttpUtil alloc] addNote:@"l536510961@126.com" dateStr:dateStr contentStr:content completionHandler:^(NSDictionary *resDict, NSError *error) {
+        [hud hideAnimated:YES];
         if(error){
             [self showMessage:error.description];
         }else{

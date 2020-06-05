@@ -45,8 +45,10 @@
     NSString* date = self.detailItem[@"CDate"];
     NSString* mid = self.detailItem[@"ID"];
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[HttpUtil alloc] motify:@"l536510961@126.com" mid:mid dateStr:date contentStr:content
            completionHandler:^(NSDictionary *resDict, NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if(error){
             [self showMessage:error.description];
         }else{
